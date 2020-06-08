@@ -74,19 +74,19 @@
     "locations": [
         {
             "id": 1,
-            "name": "Kandy Korner Kidz",
+            "name": "Candy Corner Kidz",
             "address": "202 Success Circle, Nashville, TN",
             "phone": "154-7622"
         },
         {
             "id": 2,
-            "name": "Kandy Korner",
+            "name": "Candy Corner",
             "address": "418 Teapot Way, Nashville, TN",
             "phone": "154-7624"
         },
         {
             "id": 3,
-            "name": "Kandy Korner West Side",
+            "name": "Candy Corner West Side",
             "address": "304 Unchanged Drive, Nashville, TN",
             "phone": "154-7626"
         }
