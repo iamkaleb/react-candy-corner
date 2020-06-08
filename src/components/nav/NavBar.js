@@ -8,4 +8,10 @@ const NavBar = props => {
         props.clearUser();
         props.history.push('/')
     }
+
+    return (
+        <h1>NavBar</h1>
+    )
 }
+
+export default NavBar

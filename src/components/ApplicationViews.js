@@ -1,7 +1,7 @@
-import {React, Redirect} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import React from 'react';
-import CandyCorner from './CandyCorner';
 import Login from "./auth/Login";
+import ProductList from './products/ProductList'
 
 const ApplicationViews = props => {
     const hasUser = props.hasUser;
@@ -11,11 +11,13 @@ const ApplicationViews = props => {
         <>
             <Route
                 exact
-                path="/"
+                path="/products"
                 render={props => {
-                    return <Login />;
+                    return <ProductList {...props} />
                 }}
             />
         </>
     )
 }
+
+export default ApplicationViews
