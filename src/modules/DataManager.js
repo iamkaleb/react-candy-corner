@@ -29,6 +29,11 @@ export default {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(editedObject)
-        }).then(response => response.json());
+        }).then(response => response.json())
+    },
+
+    getUsername (username) {
+        return fetch(`${remoteURL}/employees?username=${username}`)
+                .then(response => response.json())
     }
 }

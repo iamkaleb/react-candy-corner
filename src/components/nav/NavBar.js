@@ -10,8 +10,28 @@ const NavBar = props => {
     }
 
     return (
-        <h1>NavBar</h1>
-    )
-}
+            <header>
+              <h1 className="site-title">
+                Candy Corner
+              </h1>
+              <nav>
+                <ul className="container">
+                    <li>
+                        <Link className="nav-link" to="/products"> Products </Link>
+                    </li>
+                    <li>
+                        <Link className="nav-link" to="/employees"> Employees </Link>
+                    </li>
+                    <li>
+                        <Link className="nav-link" to="/locations"> Locations </Link>
+                    </li>
+                    <li>
+                        <span className="nav-link" onClick={handleLogout}> Logout </span>
+                    </li>
+                </ul>
+              </nav>
+            </header>
+          );
+        };
 
 export default NavBar

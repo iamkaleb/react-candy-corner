@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import DataManager from '../../modules/DataManager'
 
 const Login = props => {
     const [credentials, setCredentials] = useState({username: "", password: ""});
@@ -6,15 +7,24 @@ const Login = props => {
     const handleFieldChange = event => {
         const stateToChange = {...credentials}
         stateToChange[event.target.id] = event.target.value;
+
         setCredentials(stateToChange);
     };
 
     const handleLogin = event => {
         event.preventDefault();
-        
 
-        props.setUser(credentials);
-        props.history.push("/products");
+        DataManager.getUsername(credentials.username)
+        .then(employee => {
+            if (employee.length === 0) {
+                window.alert('Please see Ms. Houchens')
+            } else if (employee[0].password !== credentials.password) {
+                window.alert('Username and password do not match')
+            } else {
+                props.setUser(credentials);
+                props.history.push("/products");            
+            }
+        })
     }
 
     return (
