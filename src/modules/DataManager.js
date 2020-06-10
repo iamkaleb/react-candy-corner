@@ -35,5 +35,15 @@ export default {
     getUsername (username) {
         return fetch(`${remoteURL}/employees?username=${username}`)
                 .then(response => response.json())
-    }
+    },
+
+    getWithEmbed(collection1, id, collection2) {
+        return fetch(`${remoteURL}/${collection1}/${id}?_embed=${collection2}`)
+                    .then(response => response.json())
+    },
+
+    getWithExpand(collection1, id, collection2) {
+        return fetch(`${remoteURL}/${collection1}/${id}?_expand=${collection2}`)
+                    .then(response => response.json())
+    } 
 }

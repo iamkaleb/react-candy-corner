@@ -21,7 +21,8 @@ const Login = props => {
             } else if (employee[0].password !== credentials.password) {
                 window.alert('Username and password do not match')
             } else {
-                props.setUser(credentials);          
+                props.setUser(credentials);
+                props.history.push("/products");         
             }
         })
     }
