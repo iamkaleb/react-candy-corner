@@ -7,7 +7,7 @@ const ProductCard = props => {
         <div className="card">
             <div className="card-content">
                 <h3>
-                    Product: <span className='card-productname'>
+                    <span className='card-productname'>
                         {props.product.name}
                     </span>
                 </h3>
