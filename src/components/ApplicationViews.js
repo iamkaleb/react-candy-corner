@@ -2,17 +2,15 @@ import { Route } from 'react-router-dom';
 import React from 'react';
 import Login from "./auth/Login";
 import ProductList from './products/ProductList';
-import ProductDetails from './products/ProductDetails';
+import ProductDetail from './products/ProductDetail';
 
 const ApplicationViews = props => {
-    const hasUser = props.hasUser;
-    const setUser = props.setUser;
 
     return (
         <>
             <Route
                 exact
-                path="/products"
+                path="/"
                 render={props => {
                     return <ProductList {...props} />
                 }}
@@ -22,7 +20,7 @@ const ApplicationViews = props => {
             path="/products/:productId(\d+)"
             render={(props) => {
                 return (
-                    <ProductDetails
+                    <ProductDetail
                         productId={parseInt(props.match.params.productId)}
                         {...props}
                     />

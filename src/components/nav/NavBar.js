@@ -11,9 +11,6 @@ const NavBar = props => {
 
     return (
             <header>
-              <h1 className="site-title">
-                Candy Corner
-              </h1>
               <nav>
                 <ul className="container">
                     <li>
