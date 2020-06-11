@@ -1,20 +1,10 @@
-header {
-    background-color: darkblue;
-    border: cornflowerblue solid 3px;
-  }
-  
-  .site-title {
-    color: ghostwhite;
-    text-align: center;
-  }
-  
-  nav .container {
+nav .container {
     display: flex;
     padding: 0;
     margin-bottom: 0;
-  }
-  
-  nav .container li {
+}
+
+nav .container li {
     flex: 1;
     padding: 10px;
     text-align: center;
@@ -23,14 +13,14 @@ header {
     box-sizing: border-box;
     background-color: cornflowerblue;
     list-style-type: none;
-  }
-  
-  .nav-link {
+}
+
+.nav-link {
     color: cornsilk;
     text-decoration: underline;
     cursor: pointer;
-  }
-  
-  .nav-link:hover {
+}
+
+.nav-link:hover {
     color: maroon;
-  }
+}

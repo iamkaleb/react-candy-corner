@@ -7,13 +7,14 @@ const ProductCard = props => {
         <div className="card">
             <div className="card-content">
                 <h3>
-                    Product: <span className='card-productname'>
+                    <span className='card-productname'>
                         {props.product.name}
                     </span>
                 </h3>
-                <Link to={`/products/${props.product.id}`}>
-                    <button>Details</button>
-                </Link>
+                <button
+                    type="button"
+                    onClick={() => {props.history.push(`/products/${props.products.id}/details`)}}
+                >Details</button>
             </div>
         </div>
     )

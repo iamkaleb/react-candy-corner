@@ -22,7 +22,7 @@ const Login = props => {
                 window.alert('Username and password do not match')
             } else {
                 props.setUser(credentials);
-                props.history.push("/products");            
+                props.history.push("/products");         
             }
         })
     }

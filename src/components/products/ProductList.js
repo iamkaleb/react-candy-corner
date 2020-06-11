@@ -3,11 +3,15 @@ import ProductCard from './ProductCard'
 import DataManager from '../../modules/DataManager'
 
 const ProductList = props => {
+
     const [products, setProducts] = useState([]);
 
     const getProducts = () => {
-        return DataManager.getAll(products)
-                .then(products => setProducts(products))
+        return DataManager.getAll('products')
+                .then(APIproducts => {
+                    console.log(APIproducts)
+                    setProducts(APIproducts)
+                })
     };
 
     useEffect(() => {
