@@ -3,13 +3,11 @@ import ProductCard from './ProductCard'
 import DataManager from '../../modules/DataManager'
 
 const ProductList = props => {
-
     const [products, setProducts] = useState([]);
 
     const getProducts = () => {
         return DataManager.getAll('products')
                 .then(APIproducts => {
-                    console.log(APIproducts)
                     setProducts(APIproducts)
                 })
     };
@@ -24,7 +22,7 @@ const ProductList = props => {
                 <button 
                     type="button"
                     className="btn"
-                    onClick={() => {props.history.push('products/new')}}>
+                    onClick={() => {props.history.push('/products/new')}}>
                         Add Product
                 </button>
             </section>

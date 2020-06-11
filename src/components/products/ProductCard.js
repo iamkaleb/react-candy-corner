@@ -1,6 +1,6 @@
 import React from 'react';
 import './Products.css'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const ProductCard = props => {
     return (
@@ -13,7 +13,7 @@ const ProductCard = props => {
                 </h3>
                 <button
                     type="button"
-                    onClick={() => {props.history.push(`/products/${props.products.id}/details`)}}
+                    onClick={() => {props.history.push(`/products/${props.product.id}`)}}
                 >Details</button>
             </div>
         </div>

@@ -7,7 +7,9 @@ const LocationList = () => {
 
     const getLocations = () => {
         return DataManager.getAll("locations")
-                .then(APIlocations => setLocations(APIlocations))
+                .then(APIlocations => {
+                    setLocations(APIlocations)
+                })
     };
 
     useEffect(() => {
@@ -19,7 +21,7 @@ const LocationList = () => {
             {locations.map(location =>
                 <LocationCard
                     key={location.id}
-                    employee={location}
+                    location={location}
                 />    
             )}
         </div>

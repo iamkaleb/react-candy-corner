@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom';
 import './NavBar.css';
 
 const NavBar = props => {
+    
     const handleLogout = () => {
         props.clearUser();
-        props.history.push('/')
     }
 
     return (
@@ -14,7 +14,7 @@ const NavBar = props => {
               <nav>
                 <ul className="container">
                     <li>
-                        <Link className="nav-link" to="/products"> Products </Link>
+                        <Link className="nav-link" to="/"> Products </Link>
                     </li>
                     <li>
                         <Link className="nav-link" to="/employees"> Employees </Link>

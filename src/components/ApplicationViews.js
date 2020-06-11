@@ -15,7 +15,7 @@ const ApplicationViews = props => {
         <>
             <Route
                 exact
-                path="/products"
+                path="/"
                 render={props => {
                     return <ProductList {...props} />
                 }}

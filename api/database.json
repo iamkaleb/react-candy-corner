@@ -22,7 +22,8 @@
             "id": 4,
             "name": "World's Softest Jawbreaker",
             "price": "20.99",
-            "productTypeId": 3
+            "productTypeId": 3,
+            "locationId": 2
         },
         {
             "id": 5,

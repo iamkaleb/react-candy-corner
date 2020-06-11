@@ -4,27 +4,41 @@ import LocationCard from '../locations/LocationCard'
 import './ProductDetail.css'
 
 const ProductDetail = props => {
-    const [product, setProduct] = useState({});
-    const [locations, setLocations] = useState([]);
+    const [product, setProduct] = useState({name: ""});
+    const [productType, setProductType] = useState({})
+    const [productLocations, setProductLocations] = useState([])
+
+    useEffect(() => {
+        DataManager.getWithExpand("products", props.match.params.productId, "productType")
+                        .then(APIresult => {
+                            console.log(APIresult)
+                            setProduct(APIresult);
+                            setProductType(APIresult.productType)
+                        })
+                    }, [props.productId]);
     
     useEffect(() => {
-        DataManager.getWithEmbed("products", props.match.params.productId, "locations")
-                        .then(APIresult => {
-                            setProduct(APIresult);
-                            setLocations(APIresult.locations)
-                        })
-                    }, []);
+        // const stateToChange = []
+
+        DataManager.getAll("productLocations")
+        .then(APIprodlocs => {
+            return console.log(APIprodlocs)
+            // APIprodlocs.filter(APIprodloc => {
+            //     APIprodloc.productId === props.match.params.productId
+            //         }).map(prodloc => prodloc.locationId)
+            // }).then(locationIds => {
+            //     locationIds.forEach(locationId => {
+            //     DataManager.get(locationId)
+            //         .then(APIlocation => stateToChange.push(APIlocation))
+            //     })
+            // setProductLocations(stateToChange)
+            })
+    }, []);
     
     return (
         <div className="card">
-            <p>{product.name}</p>
-            {locations.map(location =>
-            <LocationCard
-                key={location.id}
-                location={location}
-                {...props}
-            />
-            )}
+            <h3>{product.name}</h3>
+            <p>{productType.name}</p>
         </div>
     )
 }
